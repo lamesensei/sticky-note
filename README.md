@@ -47,4 +47,4 @@ Click on the links displayed to launch the app.
 - Inline-block display setting for notes to facilitate a simple responsive design without too much tinkering.
 - Fixed menu elements to provide consistent layout.
 
-See assignment.md
+See [assignment.md](assignment.md)

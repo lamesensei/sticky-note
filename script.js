@@ -30,6 +30,7 @@
     },
     close: function(event) {
       this.board.removeChild(event.target.parentNode);
+      this.save();
     },
     save: function() {
       var notes = this.board.childNodes;

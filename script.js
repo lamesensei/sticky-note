@@ -58,6 +58,17 @@
         this.board.removeChild(this.board.lastChild);
       }
       localStorage.clear();
+    },
+    instruct: function() {
+      if (!localStorage.notes) {
+        console.log('hi');
+        var instructions = {
+          title: 'Instructions',
+          content:
+            'Press create to make a new note.\n\nSave to save all your notes.\n\nClear to clear all notes from display and memory.\n\nTo filter your notes, just use the search bar in the title.'
+        };
+        localStorage.setItem('notes', JSON.stringify([instructions]));
+      }
     }
   };
 
@@ -84,6 +95,7 @@
     var search = document.getElementById('search');
     search.addEventListener('input', searchNotes);
 
+    note.instruct();
     note.load();
   };
 

@@ -1,0 +1,15 @@
+{
+  "name": "sticky-note",
+  "version": "1.0.0",
+  "description": "A single page sticky note app.",
+  "main": "script.js",
+  "repository": "https://github.com/lamesensei/sticky-note.git",
+  "author": "lamesensei <16118606+lamesensei@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "start": "http-server"
+  }
+}

@@ -61,7 +61,6 @@
     },
     instruct: function() {
       if (!localStorage.notes) {
-        console.log('hi');
         var instructions = {
           title: 'Instructions',
           content:

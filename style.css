@@ -4,6 +4,28 @@ body {
   padding: 0;
 }
 
+button {
+  background: none;
+  font-size: 1em;
+  padding: 0.375em 0.75em;
+  border: 1px solid black;
+  line-height: 1.5;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+#clear-btn {
+  background: lightcoral;
+}
+
+#create-btn {
+  background: lightgreen;
+}
+
+#save-btn {
+  background: lightskyblue;
+}
+
 .note {
   display: inline-block;
   height: 250px;

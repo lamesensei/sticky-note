@@ -1,3 +1,7 @@
+* :focus {
+  outline: 0;
+}
+
 html,
 body {
   margin: 0;
@@ -23,6 +27,7 @@ input[type='text'],
 input[type='button'] {
   -webkit-appearance: none;
   border-radius: 0;
+  margin: 0;
 }
 
 #clear-btn {
@@ -45,10 +50,9 @@ input[type='button'] {
   font-size: 2em;
   background: #2d2d2d;
   color: whitesmoke;
-  outline: none;
-  border: none;
+  outline: 0;
+  border: 0;
   width: 100%;
-  border-bottom: 1px solid black;
   z-index: 1;
 }
 
@@ -97,7 +101,7 @@ input[type='button'] {
   height: 80%;
   width: 100%;
   background: transparent;
-  font-size: 0.75em;
+  font-size: 0.65em;
 }
 
 .close-btn {

@@ -51,6 +51,12 @@
           itself.create(item.title, item.content);
         });
       }
+    },
+    clear: function() {
+      while (this.board.lastChild) {
+        this.board.removeChild(this.board.lastChild);
+      }
+      localStorage.clear();
     }
   };
 
@@ -60,6 +66,9 @@
 
     var saveButton = document.getElementById('save-btn');
     saveButton.addEventListener('click', note.save.bind(note));
+
+    var clearButton = document.getElementById('clear-btn');
+    clearButton.addEventListener('click', note.clear.bind(note));
 
     note.load();
   };

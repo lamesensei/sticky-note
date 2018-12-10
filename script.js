@@ -1,7 +1,7 @@
 (function() {
   var note = {
     board: document.getElementById('board'),
-    create: function() {
+    create: function(title, content) {
       var note = document.createElement('div');
       var noteTitle = document.createElement('input');
       var noteContent = document.createElement('textarea');
@@ -11,9 +11,11 @@
 
       noteTitle.className = 'note-title';
       noteTitle.placeholder = 'Enter Title';
+      if (typeof title !== 'object') noteTitle.value = title;
 
       noteContent.className = 'note-content';
       noteContent.placeholder = 'Enter Content';
+      if (content) noteContent.value = content;
 
       closeButton.className = 'close-btn';
       closeButton.textContent = 'X';
@@ -40,6 +42,15 @@
         buffer.push(currentNote);
       });
       localStorage.setItem('notes', JSON.stringify(buffer));
+    },
+    load: function() {
+      var itself = this;
+      if (localStorage.notes) {
+        var saveData = JSON.parse(localStorage.notes);
+        saveData.forEach(function(item) {
+          itself.create(item.title, item.content);
+        });
+      }
     }
   };
 
@@ -49,6 +60,8 @@
 
     var saveButton = document.getElementById('save-btn');
     saveButton.addEventListener('click', note.save.bind(note));
+
+    note.load();
   };
 
   init();

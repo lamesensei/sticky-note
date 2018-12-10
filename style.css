@@ -8,11 +8,12 @@ body {
   display: inline-block;
   height: 250px;
   width: 250px;
-  border: 1px solid black;
   padding: 1em;
   margin: 1em;
   transform: rotate(1deg);
   font-size: 1.5em;
+  background-color: #ffff99;
+  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.075);
 }
 
 .note:nth-child(even) {
@@ -22,6 +23,8 @@ body {
 .note-title {
   border: none;
   outline: none;
+  background: transparent;
+  font-size: 1em;
 }
 
 .note-content {
@@ -32,10 +35,13 @@ body {
   height: 100%;
   width: 100%;
   background: transparent;
+  font-size: 0.75em;
 }
 
 .close-btn {
-  float: right;
+  position: absolute;
+  top: 1;
+  right: 1;
   cursor: pointer;
   color: red;
 }

@@ -18,6 +18,13 @@ button {
   box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.075);
 }
 
+textarea,
+input[type='text'],
+input[type='button'] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 #clear-btn {
   background: crimson;
 }

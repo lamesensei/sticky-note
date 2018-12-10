@@ -9,23 +9,25 @@ button {
   background: none;
   font-size: 1em;
   padding: 0.375em 0.75em;
-  border: 1px solid black;
+  border: 1px solid transparent;
+  color: whitesmoke;
   outline: none;
   line-height: 1.5;
   border-radius: 0.25em;
   cursor: pointer;
+  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.075);
 }
 
 #clear-btn {
-  background: lightcoral;
+  background: crimson;
 }
 
 #create-btn {
-  background: lightgreen;
+  background: yellowgreen;
 }
 
 #save-btn {
-  background: lightskyblue;
+  background: dodgerblue;
 }
 
 #search {

@@ -61,6 +61,16 @@
     }
   };
 
+  var searchNotes = function(event) {
+    var input = event.target.value;
+    var notes = note.board.childNodes;
+    Array.prototype.forEach.call(notes, function(note) {
+      note.firstChild.value.indexOf(input) !== -1
+        ? (note.style.display = 'inline-block')
+        : (note.style.display = 'none');
+    });
+  };
+
   var init = function() {
     var createButton = document.getElementById('create-btn');
     createButton.addEventListener('click', note.create.bind(note));
@@ -70,6 +80,9 @@
 
     var clearButton = document.getElementById('clear-btn');
     clearButton.addEventListener('click', note.clear.bind(note));
+
+    var search = document.getElementById('search');
+    search.addEventListener('input', searchNotes);
 
     note.load();
   };

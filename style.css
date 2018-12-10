@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 button {
@@ -9,6 +10,7 @@ button {
   font-size: 1em;
   padding: 0.375em 0.75em;
   border: 1px solid black;
+  outline: none;
   line-height: 1.5;
   border-radius: 0.25em;
   cursor: pointer;
@@ -24,6 +26,35 @@ button {
 
 #save-btn {
   background: lightskyblue;
+}
+
+#search {
+  position: fixed;
+  text-align: center;
+  display: inline-block;
+  padding: 0.25em 0.25em;
+  font-size: 2em;
+  background: #2d2d2d;
+  color: whitesmoke;
+  outline: none;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid black;
+  z-index: 1;
+}
+
+#search::placeholder {
+  color: whitesmoke;
+}
+
+#controls {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
+
+#board {
+  padding-top: 3em;
 }
 
 .note {
@@ -66,4 +97,10 @@ button {
   right: 1;
   cursor: pointer;
   color: red;
+}
+
+@media only screen and (max-width: 768px) {
+  #board {
+    text-align: center;
+  }
 }

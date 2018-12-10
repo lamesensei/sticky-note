@@ -28,12 +28,27 @@
     },
     close: function(event) {
       this.board.removeChild(event.target.parentNode);
+    },
+    save: function() {
+      var notes = this.board.childNodes;
+      var buffer = [];
+      Array.prototype.forEach.call(notes, function(note) {
+        var currentNote = {
+          title: note.childNodes[0].value,
+          content: note.childNodes[2].value
+        };
+        buffer.push(currentNote);
+      });
+      localStorage.setItem('notes', JSON.stringify(buffer));
     }
   };
 
   var init = function() {
     var createButton = document.getElementById('create-btn');
     createButton.addEventListener('click', note.create.bind(note));
+
+    var saveButton = document.getElementById('save-btn');
+    saveButton.addEventListener('click', note.save.bind(note));
   };
 
   init();

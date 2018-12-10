@@ -1,6 +1,7 @@
 (function() {
   var note = {
     board: document.getElementById('board'),
+    // Create a note element with title, content and close button.
     create: function(title, content) {
       var note = document.createElement('div');
       var noteTitle = document.createElement('input');
@@ -28,10 +29,12 @@
       this.board.appendChild(note);
       noteTitle.focus();
     },
+    // Remove note when close button is pressed, invoke save function to re-write localStorage.notes
     close: function(event) {
       this.board.removeChild(event.target.parentNode);
       this.save();
     },
+    // Reads all notes on the DOM, extract their title/content and write to localStorage.notes
     save: function() {
       var notes = this.board.childNodes;
       var buffer = [];
@@ -44,6 +47,7 @@
       });
       localStorage.setItem('notes', JSON.stringify(buffer));
     },
+    // Check for localStorage.notes, if exists - run create function for each item
     load: function() {
       var itself = this;
       if (localStorage.notes) {
@@ -53,12 +57,14 @@
         });
       }
     },
+    // Remove all notes from board and clear localStorage
     clear: function() {
       while (this.board.lastChild) {
         this.board.removeChild(this.board.lastChild);
       }
       localStorage.clear();
     },
+    // If localStorage is empty, insert instruction note
     instruct: function() {
       if (!localStorage.notes) {
         var instructions = {
@@ -71,6 +77,7 @@
     }
   };
 
+  // Check if search input matches note title, set display to none if not match
   var searchNotes = function(event) {
     var input = event.target.value.toLowerCase();
     var notes = note.board.childNodes;
@@ -81,6 +88,9 @@
     });
   };
 
+  // Initialise script by adding eventlisteners to main control buttons.
+  // Run note.instruct to check for 'first' run
+  // Run note.load to load existing notes
   var init = function() {
     var createButton = document.getElementById('create-btn');
     createButton.addEventListener('click', note.create.bind(note));

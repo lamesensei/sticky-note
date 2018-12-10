@@ -62,10 +62,10 @@
   };
 
   var searchNotes = function(event) {
-    var input = event.target.value;
+    var input = event.target.value.toLowerCase();
     var notes = note.board.childNodes;
     Array.prototype.forEach.call(notes, function(note) {
-      note.firstChild.value.indexOf(input) !== -1
+      note.firstChild.value.toLowerCase().indexOf(input) !== -1
         ? (note.style.display = 'inline-block')
         : (note.style.display = 'none');
     });

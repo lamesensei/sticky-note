@@ -15,7 +15,11 @@ A simple single page app to store all your sticky notes.
 
 ## Instructions
 
-To begin, initialize the app with the following yarn commands.
+Launch the app without downloading on http://phualiangjun.com/sticky-note
+
+or
+
+Initialize the app with the following yarn commands.
 
 (replace yarn with npm if you prefer)
 
